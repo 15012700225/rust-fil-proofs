@@ -377,7 +377,7 @@ mod tests {
         let config = StoreConfig::new(
             &temp_path,
             String::from("test-lc-tree-v1"),
-            2, //DEFAULT_CACHED_ABOVE_BASE_LAYER,
+            StoreConfig::default_cached_above_base_layer(leaves as usize),
         );
 
         for i in 0..5 {
@@ -529,6 +529,7 @@ mod tests {
                 challenged_nodes: 1,
             },
             partitions: None,
+            priority: true,
         };
 
         let mut sectors: Vec<SectorId> = Vec::new();
@@ -540,7 +541,7 @@ mod tests {
         let config = StoreConfig::new(
             &temp_path,
             String::from("test-lc-tree-v1"),
-            2, //DEFAULT_CACHED_ABOVE_BASE_LAYER,
+            StoreConfig::default_cached_above_base_layer(leaves as usize),
         );
 
         for i in 0..5 {
